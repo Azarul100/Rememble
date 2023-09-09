@@ -4,8 +4,8 @@ import { AppContext } from '../App';
 function Letter({position, attempt}) {
     const {board, correctWord, currAttempt} = useContext(AppContext);
     const letter = board[attempt][position]
-    const correct = correctWord[position] === letter;
-    const almost = !correct && letter !== "" && correctWord.includes(letter);
+    const correct = correctWord.toUpperCase()[position] === letter;
+    const almost = !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
     const letterState = currAttempt.attempt > attempt && (correct ? "correct" : almost ? "almost" : "error");
   return (
     <div className='letter' id={letterState}>{letter}</div>
