@@ -52,6 +52,7 @@ nav h2 {
   margin: 5px;
 }
 
+
 .letter {
   flex: 33%;
   height: 100%;
@@ -127,3 +128,65 @@ nav h2 {
 #disabled {
   background-color: #3a393c;
 }
+
+#rowHidden {
+  visibility: visible;
+  animation: hideRow 3s ease 1 forwards;
+}
+
+@keyframes hideRow {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* Add this media query for screens with a maximum width of 600px (adjust as needed) */
+@media (max-width: 600px) {
+  .board {
+    width: 90%; /* Adjust the board width for smaller screens */
+    height: auto; /* Allow the board height to adjust based on content */
+  }
+
+  .row {
+    flex-direction: row; /* Ensure rows remain horizontal on smaller screens */
+    margin: 5px 0; /* Adjust margin between rows for smaller screens */
+  }
+
+  .letter {
+    flex: 20%; /* Make each letter span 20% of the row width on smaller screens */
+    height: 50px; /* Adjust letter height for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .keyboard {
+    width: 90%; /* Adjust the keyboard width for smaller screens */
+    height: auto; /* Allow the keyboard height to adjust based on content */
+    margin-top: 20px; /* Increase top margin for keyboard on smaller screens */
+  }
+
+  .line1,
+  .line2,
+  .line3 {
+    flex-direction: row; /* Ensure keyboard lines are horizontal on smaller screens */
+    justify-content: space-between; /* Distribute keys evenly within lines */
+    margin: 5px 0; /* Adjust margin between lines for smaller screens */
+  }
+
+  .key {
+    width: 18%; /* Adjust key width for smaller screens */
+    height: 50px; /* Adjust key height for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  #big {
+    width: 25%; /* Adjust the width of big keys for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+

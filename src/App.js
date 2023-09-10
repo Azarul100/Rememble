@@ -64,10 +64,18 @@ function App() {
       return;
     }
 
-    if(currAttempt.attempt === 5)
-    {
-      setGameOver({gameOver: true, guessedWord: false})
+    if (currAttempt.attempt === 5) {
+      let currWord2 = "";
+      for (let i = 0; i < 5; i++) {
+        currWord2 += board[currAttempt.attempt][i].toLowerCase();
+      }
+      if (wordSet.has(currWord2.toLowerCase())) {
+        setGameOver({ gameOver: true, guessedWord: false });
+      } else {
+        alert("word not found");
+      }
     }
+    
   };
 
   return (
