@@ -3,33 +3,76 @@
   background-color: #121212;
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
   color: white;
 }
 
+#shake {
+  animation: shake 0.5s; /* You can adjust the animation duration */
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-5px); /* Adjust the amount of shake */
+  }
+  20%, 80% {
+    transform: translateX(5px); /* Adjust the amount of shake */
+  }
+  30%, 50%, 70% {
+    transform: translateX(-3px); /* Adjust the amount of shake */
+  }
+  40%, 60% {
+    transform: translateX(3px); /* Adjust the amount of shake */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+.modalh1{
+  font-size: 50px;
+}
+
+.modalp{
+  font-size: 25px;
+}
+
+.disclaimer{
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.dtext
+{
+  color: white;
+  font-size: 16px;
+}
+
 .button {
-  background-color: transparent; /* Transparent background */
-  color: white; /* Text color (adjust to match your color scheme) */
-  border: 2px solid darkgray; /* Border with your primary color (adjust as needed) */
-  border-radius: 30px; /* Rounded corners */
-  padding: 10px 20px; /* Padding for the button */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Change cursor to pointer */
-  animation: buttonPulse 1.5s infinite alternate; /* Constantly fading in and out animation */
+  background-color: transparent; 
+  color: white; 
+  border: 2px solid darkgray; 
+  border-radius: 30px; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  animation: buttonPulse 1.75s infinite alternate; 
 }
 
 .button:hover {
-  opacity: 1; /* Stop the animation on hover */
-  background-color: #528d4e; /* Semi-transparent background on hover (adjust as needed) */
-  animation: none; /* Disable the animation on hover */
+  opacity: 1; 
+  background-color: #528d4e; 
+  animation: none; 
 }
 
 @keyframes buttonPulse {
   0% {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
   }
   100% {
-    opacity: 0; /* Completely transparent */
+    opacity: 0.05; 
   }
 }
 
@@ -44,7 +87,9 @@ nav {
   width: 100%;
   margin: 0;
   border-bottom: 1px solid grey;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   place-items: center;
 }
 
@@ -53,12 +98,24 @@ nav h2 {
   font-family: serif	;
   color: white;
   font-size: 40px;
+  flex-grow: 1; 
+  text-align: center;
 }
+
+.help-wrapper {
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 32px;
+  width: 1.5vw;
+  
+}
+
+
 
 .game {
   width: 100vw;
   /* height: calc(100vh - 170px); */
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   align-items: center;
   padding-top: 50px;
@@ -108,8 +165,10 @@ nav h2 {
 
 .keyboard {
   width: 700px;
-  height: 300px;
-  margin-top: 60px;
+  /* height: 300px; */
+  /* position: fixed; */
+  bottom: 0;
+  margin-top: 20px;
 }
 
 .line1 {
@@ -159,7 +218,7 @@ nav h2 {
 
 #rowHidden {
   visibility: visible;
-  animation: hideRow 3s ease 1 forwards;
+  animation: hideRow 3.5s ease 1 forwards;
 }
 
 h3{
@@ -178,10 +237,37 @@ h3{
 }
 
 /* Add this media query for screens with a maximum width of 600px (adjust as needed) */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .board {
     width: 90%; /* Adjust the board width for smaller screens */
     height: auto; /* Allow the board height to adjust based on content */
+  }
+
+  .modalh1{
+    font-size: 30px;
+  }
+
+  .modalp{
+    font-size: 20px;
+  }
+
+  .disclaimer{
+    font-size: 14px;
+  }
+  
+  .dtext
+  {
+    font-size: 14px;
+  }
+
+  nav h2{
+    font-size: 35px;
+  }
+
+  .help-wrapper{
+    margin-right: 5px;
+    padding: 5px;
+    width: 5vw;
   }
 
   .row {
@@ -198,7 +284,7 @@ h3{
   .keyboard {
     width: 90%; /* Adjust the keyboard width for smaller screens */
     height: auto; /* Allow the keyboard height to adjust based on content */
-    margin-top: 20px; /* Increase top margin for keyboard on smaller screens */
+    margin-top: 15vh; /* Increase top margin for keyboard on smaller screens */
   }
 
   .line1,

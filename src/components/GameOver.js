@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../App';
 
 function GameOver() {
-    const {gameOver, setGameOver, correctWord, currAttempt} = useContext(AppContext)
+    const {gameOver, correctWord, currAttempt} = useContext(AppContext)
 
     const restartGame = () => {
       document.location.reload()

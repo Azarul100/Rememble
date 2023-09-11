@@ -1,10 +1,9 @@
-import React, { useState, useContext } from 'react'
-import { boardDefault } from '../Words'
+import React, { useContext } from 'react'
 import Letter from './Letter'
 import { AppContext } from '../App'
 
 function Board() {
-    const {currAttempt, gameOver} = useContext(AppContext);
+    const {currAttempt, gameOver, boardShake} = useContext(AppContext);
     let rowID1 = '';
     let rowID2 = '';
     let rowID3 = '';
@@ -153,7 +152,7 @@ function Board() {
 
 
   return (
-    <div className='board'>
+    <div className='board' id={boardShake ? 'shake' : null}>
         <div className='row' id = {rowID1}>
             <Letter position={0} attempt={0}/>
             <Letter position={1} attempt={0}/>
