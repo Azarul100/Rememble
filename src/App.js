@@ -72,7 +72,7 @@ function App() {
       if (wordSet.has(currWord2.toLowerCase())) {
         setGameOver({ gameOver: true, guessedWord: false });
       } else {
-        alert("word not found");
+        return;
       }
     }
     
@@ -100,7 +100,7 @@ function App() {
           {gameOver.gameOver ? <GameOver/> : <Keyboard />}
         </div>
       </AppContext.Provider>
-      <h2>{correctWord}</h2>
+      {/* <h2>{correctWord}</h2> */}
     </div>
   );
 }
