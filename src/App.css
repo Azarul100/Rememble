@@ -283,8 +283,13 @@ h3{
 
   .keyboard {
     width: 90%; /* Adjust the keyboard width for smaller screens */
-    height: auto; /* Allow the keyboard height to adjust based on content */
-    margin-top: 15vh; /* Increase top margin for keyboard on smaller screens */
+    height: 200px; /* Allow the keyboard height to adjust based on content */
+    /* margin-top: 10vh; */
+  }
+
+  .game {
+    height: auto; /* Allow the height to adjust based on content */
+    max-height: calc(100vh - 60px - 200px); /* Adjust the max-height to fit your design */
   }
 
   .line1,
@@ -297,8 +302,8 @@ h3{
 
   .key {
     width: 65px; /* Adjust key width for smaller screens */
-    height: 50px; /* Adjust key height for smaller screens */
-    font-size: 16px; /* Adjust font size for smaller screens */
+    height: 60px; /* Adjust key height for smaller screens */
+    font-size: 20px; /* Adjust font size for smaller screens */
   }
 
   #big {
