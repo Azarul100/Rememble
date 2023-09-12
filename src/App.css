@@ -6,6 +6,14 @@
   color: white;
 }
 
+.buttonArea
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 #shake {
   animation: shake 0.5s; /* You can adjust the animation duration */
 }
@@ -67,6 +75,23 @@
   animation: none; 
 }
 
+.buttonS {
+  background-color: transparent; 
+  color: white; 
+  border: 2px solid darkgray; 
+  border-radius: 30px; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  animation: buttonPulse 1.75s infinite alternate; 
+}
+
+.buttonS:hover {
+  opacity: 1; 
+  background-color: #b49f39; 
+  animation: none; 
+}
+
 @keyframes buttonPulse {
   0% {
     opacity: 1;
@@ -113,9 +138,9 @@ nav h2 {
 
 
 .game {
-  width: 100vw;
-  height: calc(100vh - 170px);
-  /* height: 100vh; */
+  width: 100%;
+  /* height: calc(100vh - 170px); */
+  height: 700px;
   display: flex;
   align-items: center;
   padding-top: 50px;
@@ -123,7 +148,7 @@ nav h2 {
 }
 
 .board {
-  width: 450px;
+  width: 400px;
   height: 550px;
   /* border: 0.25px solid grey; */
   display: flex;
@@ -236,11 +261,57 @@ h3{
   }
 }
 
-/* Add this media query for screens with a maximum width of 600px (adjust as needed) */
-@media (max-width: 700px) {
+ @media (max-width: 700px) {
+  .keyboard{
+    width: 90%;
+  }
+
+  #big {
+    font-size: 12px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .modalh1{
+    font-size: 30px;
+  }
+
+  .modalp{
+    font-size: 20px;
+  }
+
+  /* .board
+  {
+    width: 70%;
+  } */
+ }
+
+ @media (max-width: 460px) {
+  .keyboard{
+    width: 100%;
+  }
+
+  .board
+  {
+    width: 350px;
+  }
+ }
+
+ @media (max-width: 360px) {
   .board {
-    width: 90%; /* Adjust the board width for smaller screens */
-    height: auto; /* Allow the board height to adjust based on content */
+    width: 75%;
+  }
+ }
+
+  
+ 
+
+/* @media (max-width: 700px) {
+  .board {
+    width: 90%; 
+    height: auto; 
   }
 
   .modalh1{
@@ -271,49 +342,48 @@ h3{
   }
 
   .row {
-    flex-direction: row; /* Ensure rows remain horizontal on smaller screens */
-    margin: 5px 0; /* Adjust margin between rows for smaller screens */
+    flex-direction: row; 
+    margin: 5px 0; 
   }
 
   .letter {
-    flex: 20%; /* Make each letter span 20% of the row width on smaller screens */
-    height: 50px; /* Adjust letter height for smaller screens */
-    font-size: 20px; /* Adjust font size for smaller screens */
+    flex: 20%; 
+    height: 50px;  
+    font-size: 20px;
   }
 
   .keyboard {
-    width: 90%; /* Adjust the keyboard width for smaller screens */
-    height: 200px; /* Allow the keyboard height to adjust based on content */
-    /* margin-top: 10vh; */
+    width: 90%; 
+    height: 200px; 
   }
 
   .game {
-    height: auto; /* Allow the height to adjust based on content */
-    max-height: calc(100vh - 60px - 200px); /* Adjust the max-height to fit your design */
+    height: auto; 
+    max-height: calc(100vh - 60px - 200px); 
   }
 
   .line1,
   .line2,
   .line3 {
-    flex-direction: row; /* Ensure keyboard lines are horizontal on smaller screens */
-    justify-content: space-between; /* Distribute keys evenly within lines */
-    margin: 5px 0; /* Adjust margin between lines for smaller screens */
+    flex-direction: row; 
+    justify-content: space-between; 
+    margin: 5px 0; 
   }
 
   .key {
-    width: 65px; /* Adjust key width for smaller screens */
-    height: 60px; /* Adjust key height for smaller screens */
-    font-size: 20px; /* Adjust font size for smaller screens */
+    width: 65px; 
+    height: 60px; 
+    font-size: 20px; 
   }
 
   #big {
-    width: 25%; /* Adjust the width of big keys for smaller screens */
-    font-size: 8px; /* Adjust font size for smaller screens */
+    width: 25%; 
+    font-size: 8px; 
   }
 
   h3{
     font-size: 20px;
   }
-}
+} */
 
 

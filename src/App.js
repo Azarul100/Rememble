@@ -19,6 +19,9 @@ function App() {
   const [correctWord, setCorrectWord] = useState("")
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [boardShake, setBoardShake] = useState(false);
+  const [colorSchemes, setColorSchemes] = useState([]);
+  const [endGame, setEndGame] = useState("");
+
   
 
   const helpModal = () => {
@@ -31,6 +34,33 @@ function App() {
       setCorrectWord(words.chosenWord);
     })
   }, [])
+
+  useEffect(() => {
+    if (currAttempt.attempt > 0) {
+      const newColorSchemes = generateColorSchemeForHistory(board, correctWord, currAttempt.attempt);
+      setColorSchemes(newColorSchemes);
+    }
+  }, [board, correctWord, currAttempt]);
+
+  const generateColorSchemeForHistory = (board, correctWord, attempts) => {
+    const colorSchemes = [];
+    for (let i = 0; i < attempts; i++) {
+      const emojis = [];
+      for (let j = 0; j < 5; j++) {
+        const letter = board[i][j].toLowerCase();
+        const correctLetter = correctWord.charAt(j).toLowerCase();
+        if (letter === correctLetter) {
+          emojis.push("🟩"); // Green for correct
+        } else if (correctWord.toLowerCase().includes(letter)) {
+          emojis.push("🟨"); // Yellow for almost correct
+        } else {
+          emojis.push("⬛"); // Red for error
+        }
+      }
+      colorSchemes.push(emojis);
+    }
+    return colorSchemes;
+  };
 
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 4) {
@@ -77,6 +107,7 @@ function App() {
 
     if (currWord === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true })
+      setEndGame(currAttempt.attempt + 1)
       return;
     }
 
@@ -87,6 +118,7 @@ function App() {
       }
       if (wordSet.has(currWord2.toLowerCase())) {
         setGameOver({ gameOver: true, guessedWord: false });
+        setEndGame("X")
       } else {
         return;
       }
@@ -96,6 +128,7 @@ function App() {
 
   return (
     <div className='App'>
+      <div className='gameContent'>
       <nav>
         <h2>Rememble</h2>
         {/* <p className='help'>test</p> */}
@@ -117,7 +150,9 @@ function App() {
         isModalOpen, 
         setIsModalOpen,
         boardShake, 
-        setBoardShake
+        setBoardShake,
+        colorSchemes,
+        endGame
       }}>
         <div className='game'>
           <Board />
@@ -167,6 +202,7 @@ function App() {
         </Box>
 
       </Modal>
+      </div>
     </div>
   );
 }
