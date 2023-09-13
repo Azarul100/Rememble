@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Rememble/static/css/main.c4c525bf.css",
-    "main.js": "/Rememble/static/js/main.7161c3bd.js",
+    "main.js": "/Rememble/static/js/main.e02880b3.js",
     "static/js/787.28cb0dcd.chunk.js": "/Rememble/static/js/787.28cb0dcd.chunk.js",
     "static/media/wordbank.txt": "/Rememble/static/media/wordbank.e947435b47c736be1de2.txt",
     "static/media/wordbankAnswers.txt": "/Rememble/static/media/wordbankAnswers.bce4b750917abb5456d1.txt",
     "index.html": "/Rememble/index.html",
     "main.c4c525bf.css.map": "/Rememble/static/css/main.c4c525bf.css.map",
-    "main.7161c3bd.js.map": "/Rememble/static/js/main.7161c3bd.js.map",
+    "main.e02880b3.js.map": "/Rememble/static/js/main.e02880b3.js.map",
     "787.28cb0dcd.chunk.js.map": "/Rememble/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c4c525bf.css",
-    "static/js/main.7161c3bd.js"
+    "static/js/main.e02880b3.js"
   ]
 }
