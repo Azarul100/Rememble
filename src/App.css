@@ -282,10 +282,10 @@ h3{
     font-size: 20px;
   }
 
-  /* .board
+  .board
   {
-    width: 70%;
-  } */
+    height: 55%;
+  }
  }
 
  @media (max-width: 460px) {
@@ -296,12 +296,18 @@ h3{
   .board
   {
     width: 350px;
+    height: 50%;
   }
  }
 
  @media (max-width: 360px) {
   .board {
-    width: 75%;
+    width: 85%;
+    height: 40%;
+  }
+
+  .letter{
+    font-size: 25px;
   }
  }
 
