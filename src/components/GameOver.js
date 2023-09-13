@@ -18,6 +18,8 @@ function GameOver() {
         const emojiText = emojis.join('');
         gameInfo += `\n${emojiText}`;
       }
+
+      gameInfo += '\n\nhttps://azarul100.github.io/Rememble/'
     
       // Create a temporary textarea element to copy the text
       const textArea = document.createElement('textarea');
